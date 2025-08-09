@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.31)
 project(msg)
-
 set(CMAKE_CXX_STANDARD 20)
 
 include(FetchContent)
@@ -15,8 +14,7 @@ FetchContent_Declare(
         GIT_REPOSITORY https://github.com/CLIUtils/CLI11.git
         GIT_TAG v2.5.0
 )
-
 FetchContent_MakeAvailable(spdlog CLI11)
 
-add_executable(msg main.cpp)
+add_executable(msg src/main.cpp)
 target_link_libraries(msg PRIVATE spdlog CLI11)
